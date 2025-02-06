@@ -25,3 +25,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setLanguage(currentLang);
 });
+
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+
+document.querySelector('.contact-form').addEventListener('submit', (e) => {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (!name || !email || !message) {
+        e.preventDefault();
+        alert('Por favor, completa todos los campos.');
+    }
+});

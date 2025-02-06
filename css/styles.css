@@ -7,9 +7,14 @@ body {
 
 header {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px;    
     background-color: #111;
 }
 
@@ -21,13 +26,13 @@ header {
 .logo span {
     color: #ff0077;
 }
-nav {
+.navbar {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-nav ul {
+.navbar ul {
     display: flex;
     list-style: none;
     padding: 0;
@@ -35,14 +40,23 @@ nav ul {
     gap: 20px;
 }
 
-nav a {
+.navbar a {
     text-decoration: none;
     color: white;
     transition: color 0.3s;
 }
 
-nav a:hover {
+.navbar a:hover {
     color: #ff0077;
+}
+
+.navbar-toggler {
+    border-color: #ff0077;
+}
+
+header.scrolled {
+    background-color: rgba(17, 17, 17, 0.9);
+    transition: background-color 0.3s ease;
 }
 
 .hero {
@@ -52,10 +66,27 @@ nav a:hover {
     height: 80vh;
     background: url('assets/background.jpg') no-repeat center center/cover;
     text-align: center;
+    margin-top: 80px;
 }
 
-.hero-content {
-    max-width: 600px;
+.hero-content h1 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    text-shadow: 0 0 5px #ff0077, 0 0 15px #ff0077, 0 0 200px #ff0077;
+}
+
+.hero-content p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 h1 {
@@ -146,15 +177,31 @@ h1 {
 .project-card {
     background: #222;
     border-radius: 10px;
+    position: relative;
     overflow: hidden;
     width: 100%;
     max-width: 400px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 119, 0.3), transparent);
+    transition: left 0.5s;
+}
+
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(255, 0, 119, 0.3);
+}
+
+.project-card:hover::before {
+    left: 100%;
 }
 
 .project-image {
@@ -352,6 +399,12 @@ h1 {
     color: #ff0077;
 }
 
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff0077;
+    box-shadow: 0 0 10px rgba(255, 0, 119, 0.5);
+}
+
 .contact-form button {
     display: block;
     width: 100%;
@@ -455,4 +508,31 @@ footer {
         width: 100%;
         max-width: none;
     }
+    .navbar-collapse {
+        background-color: #1a1a1a;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
 }
