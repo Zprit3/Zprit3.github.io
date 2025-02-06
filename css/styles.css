@@ -1,6 +1,10 @@
+
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Liter", serif;    
+    font-optical-sizing: auto;
+    font-style: normal;
     background-color: #0a0a0a;
     color: white;
 }
@@ -70,6 +74,8 @@ header.scrolled {
 }
 
 .hero-content h1 {
+    font-family: "Rock Salt", serif;
+    font-size: 4em;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
