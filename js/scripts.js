@@ -36,13 +36,26 @@ window.addEventListener('scroll', () => {
 });
 
 
-document.querySelector('.contact-form').addEventListener('submit', (e) => {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+document.querySelector('.contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault(); //para evitar que se recargue la página
 
-    if (!name || !email || !message) {
-        e.preventDefault();
-        alert('Por favor, completa todos los campos.');
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            alert('¡Mensaje enviado con éxito!');
+            form.reset();
+        } else {
+            alert('Hubo un problema al enviar el mensaje. Intenta de nuevo.');
+        }
+    } catch (error) {
+        alert('Error al conectar con el servidor.');
     }
 });
