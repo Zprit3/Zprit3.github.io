@@ -1,6 +1,7 @@
 const logo = document.querySelector('.logo');
 const tryMeMessage = document.getElementById('try-me-message');
-const themes = ['dark-theme', 'blue-theme', 'green-theme', 'green-theme', 'purple-theme', 'orange-theme', 'pink-theme', 'gray-theme']; //Array de temas (en themes.css)
+const themes = ['dark-theme', 'blue-theme', 'green-theme', 'purple-theme', 'orange-theme', 'pink-theme', 'gray-theme']; // Array de temas (en themes.css)
+let currentThemeIndex = 0; // Índice del tema actual
 
 // Función para cambiar el tema
 function changeTheme(themeName) {
@@ -8,13 +9,9 @@ function changeTheme(themeName) {
     document.body.classList.add(themeName); // Añade la nueva clase de tema
 }
 
-function getRandomTheme() {
-    return themes[Math.floor(Math.random() * themes.length)];
-}
-
 function showTryMeMessage() {
     tryMeMessage.style.display = 'inline';
-    localStorage.setItem('messageShown', 'true'); 
+    localStorage.setItem('messageShown', 'true');
 }
 
 function hideTryMeMessage() {
@@ -23,13 +20,14 @@ function hideTryMeMessage() {
 
 // Evento click en el logo
 logo.addEventListener('click', () => {
-    const randomTheme = getRandomTheme();
-    changeTheme(randomTheme);
+    // Avanzar al siguiente tema
+    currentThemeIndex = (currentThemeIndex + 1) % themes.length; // Usamos el operador % (módulo) para volver al inicio si llegamos al final del array
+    const nextTheme = themes[currentThemeIndex];
+    changeTheme(nextTheme);
 
     // Ocultar el mensaje después del primer click
     hideTryMeMessage();
 });
-
 
 // Mostrar el mensaje "Intenta presionarme" si es la primera vez
 window.addEventListener('DOMContentLoaded', () => {
@@ -37,6 +35,6 @@ window.addEventListener('DOMContentLoaded', () => {
         showTryMeMessage();
 
         // Ocultar el mensaje después de unos segundos (opcional)
-        setTimeout(hideTryMeMessage, 5000); // 5 segundos
+        setTimeout(hideTryMeMessage, 2000); // 5 segundos
     }
 });
