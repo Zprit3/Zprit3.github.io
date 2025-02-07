@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Liter&family=Rock+Salt&display=swap" rel="stylesheet">
-    rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js"></script>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.155/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.155/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -190,7 +196,7 @@
             Reserved</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/figures.js"></script>
+    <script type="module" src="js/figures.js"></script>    
     <script src="js/scripts.js"></script>
 </body>
 
