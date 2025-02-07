@@ -1,0 +1,67 @@
+
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.about .name {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #ccc; /* Este color se mantiene sin variable */
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px var(--primary-color); 
+}
+.skill-icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.skill-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.skill-card p {
+    font-size: 1em;
+    color: #ccc; 
+    margin: 0;
+}
