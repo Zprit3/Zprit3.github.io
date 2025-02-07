@@ -1,12 +1,10 @@
-
-
 body {
     margin: 0;
-    font-family: "Liter", serif;    
+    font-family: "Liter", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: #0a0a0a;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 header {
@@ -18,18 +16,50 @@ header {
     z-index: 1000;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;    
-    background-color: #111;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
 }
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: bold;    
+    cursor: pointer; 
+    transition: transform 0.2s ease-in-out;
+}
+.logo span {
+    color: var(--primary-color);
 }
 
-.logo span {
-    color: #ff0077;
+.logo:hover {
+    transform: scale(1.05); 
 }
+
+.logo:active {
+    transform: scale(0.95);
+    animation: pulse 0.5s ease-in-out; 
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(0.95);
+    }
+}
+
+.logo #try-me-message{
+    font-size: 0.6em;
+    color: var(--primary-color);
+    font-weight: normal;
+    margin-left: 20px;
+}
+
+
 .navbar {
     display: flex;
     align-items: center;
@@ -46,16 +76,16 @@ header {
 
 .navbar a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
     transition: color 0.3s;
 }
 
 .navbar a:hover {
-    color: #ff0077;
+    color: var(--primary-color);
 }
 
 .navbar-toggler {
-    border-color: #ff0077;
+    border-color: var(--primary-color);
 }
 
 header.scrolled {
@@ -67,10 +97,9 @@ header.scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* Para que el canvas se posicione correctamente */
-    overflow: hidden; /* Para evitar que la animación se salga del contenedor */
+    position: relative;
+    overflow: hidden;
     height: 80vh;
-    /*background: url('assets/background.jpg') no-repeat center center/cover;*/
     text-align: center;
     margin-top: 80px;
 }
@@ -86,7 +115,7 @@ header.scrolled {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
-    text-shadow: 0 0 5px #ff0077, 0 0 15px #ff0077, 0 0 200px #ff0077;
+    text-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color), 0 0 200px var(--primary-color);
 }
 
 .hero-content p {
@@ -108,12 +137,18 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Asegura que el canvas esté detrás del contenido */
+    z-index: 0;
 }
+
+#hero-canvas > div:nth-child(2) {
+    display: none;
+}
+
+
 
 h1 {
     font-size: 3em;
-    color: #ff0077;
+    color: var(--primary-color);
 }
 
 .buttons {
@@ -125,14 +160,14 @@ h1 {
     padding: 10px 20px;
     margin-right: 10px;
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
     border-radius: 5px;
     transition: background 0.3s;
     cursor: pointer;
 }
 
 .btn:focus {
-    outline: 2px solid #ff0077;
+    outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
@@ -142,8 +177,8 @@ h1 {
 }
 
 #language-toggle {
-    color: #ff0077;
-    background-color: #222;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -152,13 +187,12 @@ h1 {
 }
 
 #language-toggle:hover {
-    background-color: #444;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--text-color);
 }
 
-
 .primary {
-    background: #ff0077;
+    background: var(--primary-color);
 }
 
 .primary:hover {
@@ -166,18 +200,18 @@ h1 {
 }
 
 .secondary {
-    background: #222;
+    background: var(--secondary-color);
 }
 
 .secondary:hover {
-    background: #444;
+    background: var(--accent-color);
 }
 
 /* Estilos para la sección Projects */
 .featured-projects {
     text-align: center;
     padding: 50px 20px;
-    background-color: #111;
+    background-color: var(--secondary-color);
     border-radius: 10px;
     margin: 20px auto;
     max-width: 1200px;
@@ -185,7 +219,7 @@ h1 {
 
 .featured-projects h2 {
     font-size: 2.5em;
-    color: #ff0077;
+    color: var(--primary-color);
     margin-bottom: 40px;
 }
 
@@ -197,7 +231,7 @@ h1 {
 }
 
 .project-card {
-    background: #222;
+    background: var(--secondary-color);
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -250,13 +284,13 @@ h1 {
 
 .project-content h3 {
     font-size: 1.5em;
-    color: #fff;
+    color: var(--text-color);
     margin-bottom: 10px;
 }
 
 .project-content p {
     font-size: 1em;
-    color: #ccc;
+    color: #ccc; /* Color con valor hardcodeado */
     margin-bottom: 20px;
 }
 
@@ -270,11 +304,10 @@ h1 {
     text-align: center;
 }
 
-
 .about {
     text-align: center;
     padding: 50px 20px;
-    background-color: #111;
+    background-color: var(--secondary-color);
     border-radius: 10px;
     margin: 20px auto;
     max-width: 1200px;
@@ -282,13 +315,13 @@ h1 {
 
 .about h2 {
     font-size: 2.5em;
-    color: #ff0077;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 .about .name {
     font-size: 1.5em;
-    color: #ff0077;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
@@ -297,7 +330,7 @@ h1 {
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 40px;
-    color: #ccc;
+    color: #ccc; /* Este color se mantiene sin variable */
 }
 
 .skills {
@@ -308,7 +341,7 @@ h1 {
 }
 
 .skill-card {
-    background: #222;
+    background: var(--secondary-color);
     padding: 20px;
     border-radius: 10px;
     width: 250px;
@@ -318,24 +351,23 @@ h1 {
 
 .skill-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 0, 119, 0.3);
+    box-shadow: 0 10px 20px rgba(255, 0, 119, 0.3); 
 }
-
 .skill-icon {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: #ff0077;
+    color: var(--primary-color);
 }
 
 .skill-card h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .skill-card p {
     font-size: 1em;
-    color: #ccc;
+    color: #ccc; 
     margin: 0;
 }
 
@@ -343,7 +375,7 @@ h1 {
 .contact {
     text-align: center;
     padding: 50px 20px;
-    background-color: #111;
+    background-color: var(--secondary-color);
     border-radius: 10px;
     margin: 20px auto;
     max-width: 1200px;
@@ -351,7 +383,7 @@ h1 {
 
 .contact h2 {
     font-size: 2.5em;
-    color: #ff0077;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
@@ -360,7 +392,7 @@ h1 {
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 40px;
-    color: #ccc;
+    color: #ccc; 
 }
 
 .contact-container {
@@ -387,25 +419,25 @@ h1 {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    background: #222;
-    border: 1px solid #444;
+    background: var(--secondary-color);
+    border: 1px solid var(--accent-color);
     border-radius: 5px;
-    color: white;
+    color: var(--text-color);
     font-size: 1em;
     transition: border-color 0.3s;
 }
-
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #ff0077;
+    border-color: var(--primary-color);
     outline: none;
+    box-shadow: 0 0 10px rgba(255, 0, 119, 0.5); /* Color con valor hardcodeado */
 }
 
 .form-group label {
     position: absolute;
     top: 10px;
     left: 10px;
-    color: #888;
+    color: #888; /* Este color se mantiene sin variable */
     font-size: 1em;
     transition: all 0.3s;
     pointer-events: none;
@@ -418,21 +450,15 @@ h1 {
     top: -10px;
     left: 5px;
     font-size: 0.8em;
-    color: #ff0077;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #ff0077;
-    box-shadow: 0 0 10px rgba(255, 0, 119, 0.5);
+    color: var(--primary-color);
 }
 
 .contact-form button {
     display: block;
     width: 100%;
     padding: 10px;
-    background: #ff0077;
-    color: white;
+    background: var(--primary-color);
+    color: var(--text-color);
     border: none;
     border-radius: 5px;
     font-size: 1em;
@@ -441,7 +467,7 @@ h1 {
 }
 
 .contact-form button:hover {
-    background: #cc0055;
+    background: #cc0055; /* Este color no se ha cambiado a variable, mantenido igual */
 }
 
 .social-links {
@@ -457,15 +483,15 @@ h1 {
     align-items: center;
     gap: 10px;
     padding: 10px;
-    background: #222;
+    background: var(--secondary-color);
     border-radius: 5px;
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
     transition: background 0.3s;
 }
 
 .social-link:hover {
-    background: #444;
+    background: var(--accent-color);
 }
 
 .social-link img {
@@ -477,19 +503,17 @@ h1 {
     font-size: 1em;
 }
 
-
 footer {
     text-align: center;
     padding: 20px;
-    background: #111;
+    background: var(--secondary-color);
     margin-top: 50px;
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 768px) 
+{
     .hero-content h1 {
         font-size: 2em;
-        
     }
 
     .projects-container {
@@ -531,6 +555,7 @@ footer {
         width: 100%;
         max-width: none;
     }
+
     .navbar-collapse {
         background-color: #1a1a1a;
         padding: 10px;

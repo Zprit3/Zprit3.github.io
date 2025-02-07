@@ -177,19 +177,17 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
     renderer.setSize(width, height); // Actualizar renderer size
 
-    console.log("Window resized:", width, height); // Depuración
 }
 
 function onPointerMove(event) {
     pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
     pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-    console.log("Pointer moved:", pointer.x, pointer.y); // Depuración
 }
 
 function animate(time) {
     render();
-    stats.update(); // Asegúrate de que stats esté definido
+    stats.update();
 }
 
 function render() {
@@ -198,7 +196,6 @@ function render() {
     mesh.rotation.x = time * 0.15;
     mesh.rotation.y = time * 0.25;
 
-    console.log("Rendering at time:", time); // Depuración
 
     raycaster.setFromCamera(pointer, camera);
 
