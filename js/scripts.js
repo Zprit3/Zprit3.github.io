@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     let currentLang = localStorage.getItem("selectedLanguage") || "en";
     const languageToggle = document.getElementById("language-toggle");
-    const title = document.getElementById('title');
 
     document.body.style.visibility = "hidden";
 
