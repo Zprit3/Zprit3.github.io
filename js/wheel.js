@@ -1,6 +1,6 @@
 const logo = document.querySelector('.logo');
 const tryMeMessage = document.getElementById('try-me-message');
-const themes = ['dark-theme', 'blue-theme', 'green-theme', 'purple-theme', 'orange-theme', 'pink-theme', 'gray-theme']; // Array de temas (en themes.css)
+const themes = ['pastel-theme','dark-theme', 'blue-theme', 'green-theme', 'purple-theme', 'orange-theme', 'pink-theme', 'gray-theme']; // Array de temas (en themes.css)
 let currentThemeIndex = 0; // Índice del tema actual
 
 // Función para cambiar el tema
@@ -37,4 +37,5 @@ window.addEventListener('DOMContentLoaded', () => {
         // Ocultar el mensaje después de unos segundos (opcional)
         setTimeout(hideTryMeMessage, 2000); // 5 segundos
     }
+    document.body.classList.add(themes[0]); // Añade la clase del primer tema al body
 });

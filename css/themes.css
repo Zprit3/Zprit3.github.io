@@ -1,39 +1,39 @@
 :root {
     /* Tema por defecto (claro) */
-    --primary-color: #ff0077;
-    --secondary-color: #22222281;
-    --background-color: #0a0a0a;
-    --text-color: #ffffff;
+    --primary-color: #04c5ff;
+    --secondary-color: #000000bb;
+    --background-color: #000000;
+    --text-color: #ebebeb;
     --accent-color: #444; /* Un color de acento para detalles */
-    --hoverbtn-color: #aa0055;
+    --hoverbtn-color: #0088aa8e;
 }
 
 /* Tema oscuro */
 .dark-theme {
-    --primary-color: #a3001b; /* Un tono más oscuro de rosa */
-    --secondary-color: #1111118e;
-    --background-color: #000;
-    --text-color: #eee;
-    --accent-color: #333;
-    --hoverbtn-color: #ff3939;
+    --primary-color: #c50101; /* FERRARIIIII */
+    --secondary-color: #0000009c;
+    --background-color: #1d0000;
+    --text-color: #ffffffd5;
+    --accent-color: #770000a9;
+    --hoverbtn-color: #ffe600c5;
 
 }
 
 /* Tema azul */
 .blue-theme {
-    --primary-color: #007bff; /* Azul brillante */
-    --secondary-color: #1a202c83; /* Gris oscuro azulado */
-    --background-color: #0d1117; /* Negro azulado */
-    --text-color: #f0f6fc; /* Blanco azulado */
-    --accent-color: #38444f;
-    --hoverbtn-color: #003cff;
+    --primary-color: #00f7ff;
+    --secondary-color: #07495aa8; 
+    --background-color: #0d1117; 
+    --text-color: #ffffff;
+    --accent-color: #1a61a3a9;
+    --hoverbtn-color: #33a4ac;
 
 }
 
 /* Tema verde */
 .green-theme {
     --primary-color: #28a745; /* Verde brillante */
-    --secondary-color: #13131386; /* Gris muy oscuro */
+    --secondary-color: #1313139f; /* Gris muy oscuro */
     --background-color: #000000;
     --text-color: #f8f9fa; /* Blanco hueso */
     --accent-color: #01b487; /* Un verde azulado para detalles */
@@ -43,11 +43,11 @@
 
 /* Tema morado */
 .purple-theme {
-    --primary-color: #6f42c1; /* Morado intenso */
-    --secondary-color: #1e1e1e8c; /* Gris muy oscuro */
-    --background-color: #000;
+    --primary-color: #9d68ff; /* Morado intenso */
+    --secondary-color: #970cce81; /* Gris muy oscuro */
+    --background-color: #140044;
     --text-color: #f2f2f2; /* Gris claro */
-    --accent-color: #8a6ac2; /* Un tono más claro de morado */
+    --accent-color: #a388d1; /* Un tono más claro de morado */
     --hoverbtn-color: #9600aa;
 
 }
@@ -55,7 +55,7 @@
 /* Tema naranja */
 .orange-theme {
     --primary-color: #fd7e14; /* Naranja vivo */
-    --secondary-color: #1a1a1a8a; /* Gris muy oscuro */
+    --secondary-color: #5a3300de; /* Gris muy oscuro */
     --background-color: #000;
     --text-color: #f8f9fa; /* Blanco hueso */
     --accent-color: #92929285; /* Un gris muy claro */
@@ -76,11 +76,11 @@
 
 /* Tema gris */
 .gray-theme {
-    --primary-color: #707b85; /* Gris medio */
-    --secondary-color: #343a409c; /* Gris oscuro */
-    --background-color: #212529; /* Negro suave */
-    --text-color: #f8f9fa; /* Blanco hueso */
-    --accent-color: #ff660071; /* Azul brillante */
+    --primary-color: #000000; /* Ngro como el diaulo */
+    --secondary-color: #0000009c; /* Casi igual pero trasparencia */
+    --background-color: #fffefe; /* Blanco */
+    --text-color: #ffffff79; /* Gris medio */
+    --accent-color: #ff660071; /* what? */
     --hoverbtn-color: #a78e0080;
 
 }

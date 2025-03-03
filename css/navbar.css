@@ -79,7 +79,7 @@
 }
 
 header.scrolled {
-    background-color: rgba(17, 17, 17, 0.651);
+    background-color: rgba(0, 0, 0, 0.849);
     transition: background-color 0.3s ease;
 }
 

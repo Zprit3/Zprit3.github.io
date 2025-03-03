@@ -5,8 +5,11 @@
     padding: 50px 20px;
     background-color: var(--secondary-color);
     border-radius: 10px;
-    margin: 20px auto;
+    margin: 150px auto;
     max-width: 1200px;
+    scroll-margin-top: 150px
+
+
 }
 
 .contact h2 {
